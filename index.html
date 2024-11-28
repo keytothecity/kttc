@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEY TO THE CITY</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+            text-align: center;
+            color: #fff;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            font-weight: 700;
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .star {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            opacity: 0;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background" id="background">
+        <!-- Генерация светящихся огней -->
+    </div>
+    <div class="content">
+        <h1>KEY TO THE CITY</h1>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        const createStars = () => {
+            const background = document.getElementById('background');
+            const currentStars = background.querySelectorAll('.star').length;
+            const maxStars = 15;
+            const minStars = 5;
+            const newStars = Math.floor(Math.random() * (maxStars - minStars + 1)) + minStars;
+            const numberOfStars = Math.min(newStars, maxStars - currentStars); // Ограничение на максимальное количество огней
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+
+                // Генерация случайной стороны вылета
+                const side = Math.floor(Math.random() * 4);
+                if (side === 0) {
+                    star.style.top = '0';
+                    star.style.left = `${Math.random() * 100}%`;
+                } else if (side === 1) {
+                    star.style.top = '100%';
+                    star.style.left = `${Math.random() * 100}%`;
+                } else if (side === 2) {
+                    star.style.top = `${Math.random() * 100}%`;
+                    star.style.left = '0';
+                } else {
+                    star.style.top = `${Math.random() * 100}%`;
+                    star.style.left = '100%';
+                }
+
+                star.style.width = `${1 + Math.random() * 2}px`;
+                star.style.height = `${1 + Math.random() * 2}px`;
+                star.style.boxShadow = `0 0 ${5 + Math.random() * 10}px rgba(255, 255, 255, ${0.5 + Math.random() * 0.5})`;
+
+                background.appendChild(star);
+
+                anime({
+                    targets: star,
+                    translateX: () => `${(Math.random() * 2 - 1) * 100}vw`,
+                    translateY: () => `${(Math.random() * 2 - 1) * 100}vh`,
+                    opacity: [1, 0],
+                    duration: 5000 + Math.random() * 10000, // Рандомное время до затухания
+                    easing: 'linear',
+                    complete: function() {
+                        star.remove();
+                    }
+                });
+            }
+        };
+
+        setInterval(createStars, 1000); // Создание новых огней каждые 1 секунду
+    </script>
+</body>
+</html>
