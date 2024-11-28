@@ -57,7 +57,6 @@
 </head>
 <body>
     <div class="background" id="background">
-        <!-- Генерация светящихся огней -->
     </div>
     <div class="content">
         <h1>KEY TO THE CITY</h1>
@@ -70,13 +69,12 @@
             const maxStars = 15;
             const minStars = 5;
             const newStars = Math.floor(Math.random() * (maxStars - minStars + 1)) + minStars;
-            const numberOfStars = Math.min(newStars, maxStars - currentStars); // Ограничение на максимальное количество огней
+            const numberOfStars = Math.min(newStars, maxStars - currentStars);
 
             for (let i = 0; i < numberOfStars; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
 
-                // Генерация случайной стороны вылета
                 const side = Math.floor(Math.random() * 4);
                 if (side === 0) {
                     star.style.top = '0';
@@ -103,7 +101,7 @@
                     translateX: () => `${(Math.random() * 2 - 1) * 100}vw`,
                     translateY: () => `${(Math.random() * 2 - 1) * 100}vh`,
                     opacity: [1, 0],
-                    duration: 5000 + Math.random() * 10000, // Рандомное время до затухания
+                    duration: 5000 + Math.random() * 10000,
                     easing: 'linear',
                     complete: function() {
                         star.remove();
@@ -112,7 +110,7 @@
             }
         };
 
-        setInterval(createStars, 1000); // Создание новых огней каждые 1 секунду
+        setInterval(createStars, 1000);
     </script>
 </body>
 </html>
