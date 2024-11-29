@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DUBAIKEYS (DKYS) - Whitepaper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 40px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f1f1f1;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        p {
+            text-align: justify;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Whitepaper for DUBAIKEYS (DKYS)</h1>
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>Welcome to the DUBAIKEYS (DKYS) Whitepaper page. This project allows everyone to influence the ranking of their favorite city by supporting its growth. Cities with the highest market capitalization occupy the top positions in the ranking.</p>
+        </div>
+        <div class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Crypto City Ranking:</strong> The platform ranks cities based on the market capitalization of their cryptocurrencies.</li>
+                <li><strong>User Influence:</strong> Everyone can impact the ranking of their favorite city by supporting its growth.</li>
+                <li><strong>Transparency and Security:</strong> Built on the Solana blockchain, DUBAIKEYS ensures a high level of security and transparency for transactions.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Technical Specifications</h2>
+            <ul>
+                <li><strong>Blockchain:</strong> Solana</li>
+                <li><strong>Symbol:</strong> DKYS</li>
+                <li><strong>Maximum Token Supply:</strong> 1 billion</li>
+                <li><strong>Decimals:</strong> 9</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Distribution Strategy</h2>
+            <ul>
+                <li><strong>Team and Development:</strong> 20%</li>
+                <li><strong>Marketing and Partnerships:</strong> 20%</li>
+                <li><strong>Reserve Fund:</strong> 30%</li>
+                <li><strong>User Emission:</strong> 30%</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Roadmap</h2>
+            <ul>
+                <li><strong>Phase 1:</strong> Launch the platform and initial token emission.</li>
+                <li><strong>Phase 2:</strong> Develop and deploy smart contracts.</li>
+                <li><strong>Phase 3:</strong> Marketing campaigns and partnerships.</li>
+                <li><strong>Phase 4:</strong> Expand platform functionalities and improve user experience.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Security and Compliance</h2>
+            <ul>
+                <li><strong>Smart Contract Audits:</strong> Regular checks by independent experts.</li>
+                <li><strong>Regulatory Compliance:</strong> Adherence to all local and international laws and regulations.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>DUBAIKEYS (DKYS) aims to create a platform that allows users to influence city rankings by supporting their cryptocurrencies. Join us and become part of the global cryptocurrency ecosystem. If you have any additional questions or suggestions, feel free to contact us!</p>
+        </div>
+    </div>
+</body>
+</html>
