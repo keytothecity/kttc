@@ -4,114 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keys to the City</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #000;
-            overflow: hidden;
-            text-align: center;
-            color: #fff;
-        }
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 2;
-        }
-        h1 {
-            font-size: 4em;
-            margin: 0;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        .star {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-            opacity: 0;
-        }
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://keys-to-the-city.gitbook.io/keys-to-the-city-whitepaper/~gitbook/icon?size=small&amp;theme=dark" type="image/png" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-    <div class="background" id="background">
+    <div class="content-box">
+        <div class="background" id="background"></div>
+        <div class="content">
+            <h1>Keys to the City</h1>
+        </div>
     </div>
-    <div class="content">
-        <h1>Keys to the City</h1>
-    </div>
+    <main>
+        <h2>Top Cities</h2>
+        <canvas id="myCanvas" width="800" height="500"></canvas> <!-- Increased height to 500 -->
+        <p class="description">Welcome to the Ultimate Virtual City Showdown!<br><br>
+        Ever wondered which city reigns supreme in the digital landscape? Here at Keys to the City, we've conjured up an engaging and competitive platform where cities are ranked by their cryptocurrency capitalizations. It's an exciting experiment that merges urban pride with cutting-edge technology.</p>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Keys to the City. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="https://keys-to-the-city.gitbook.io/keys-to-the-city-whitepaper">Whitepaper</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script>
-        const createStars = () => {
-            const background = document.getElementById('background');
-            const currentStars = background.querySelectorAll('.star').length;
-            const maxStars = 15;
-            const minStars = 5;
-            const newStars = Math.floor(Math.random() * (maxStars - minStars + 1)) + minStars;
-            const numberOfStars = Math.min(newStars, maxStars - currentStars);
-
-            for (let i = 0; i < numberOfStars; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-
-                const side = Math.floor(Math.random() * 4);
-                if (side === 0) {
-                    star.style.top = '0';
-                    star.style.left = `${Math.random() * 100}%`;
-                } else if (side === 1) {
-                    star.style.top = '100%';
-                    star.style.left = `${Math.random() * 100}%`;
-                } else if (side === 2) {
-                    star.style.top = `${Math.random() * 100}%`;
-                    star.style.left = '0';
-                } else {
-                    star.style.top = `${Math.random() * 100}%`;
-                    star.style.left = '100%';
-                }
-
-                star.style.width = `${1 + Math.random() * 2}px`;
-                star.style.height = `${1 + Math.random() * 2}px`;
-                star.style.boxShadow = `0 0 ${5 + Math.random() * 10}px rgba(255, 255, 255, ${0.5 + Math.random() * 0.5})`;
-
-                background.appendChild(star);
-
-                anime({
-                    targets: star,
-                    translateX: () => `${(Math.random() * 2 - 1) * 100}vw`,
-                    translateY: () => `${(Math.random() * 2 - 1) * 100}vh`,
-                    opacity: [1, 0],
-                    duration: 5000 + Math.random() * 10000,
-                    easing: 'linear',
-                    complete: function() {
-                        star.remove();
-                    }
-                });
-            }
-        };
-
-        setInterval(createStars, 1000);
-    </script>
+    <script src="script.js"></script>
+    <script src="stars.js"></script>
 </body>
 </html>
