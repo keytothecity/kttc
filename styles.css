@@ -1,25 +1,32 @@
+:root {
+    --background-color: #101524;
+    --text-color: #f2ddcc;
+    --border-color: rgba(255, 255, 255, 0.05);
+    --star-color: rgba(242, 221, 204, 0.8);
+    --font-family: 'Roboto', Arial, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #101524; /* Background color */
-    color: #f2ddcc; /* Text color */
-    overflow-x: hidden;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-header {
-    background-color: #101524; /* Background color */
+.header {
+    background-color: var(--background-color);
     height: 64px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Bottom border */
+    border-bottom: 1px solid var(--border-color);
 }
 
-header .container {
+.header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +37,7 @@ header .container {
 .logo {
     font-size: 1.5em;
     font-weight: bold;
-    color: #f2ddcc; /* Text color */
+    color: var(--text-color);
 }
 
 nav ul {
@@ -47,21 +54,20 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #f2ddcc; /* Text color */
+    color: var(--text-color);
 }
 
 .content-box {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #101524;
+    background: var(--background-color);
     overflow: hidden;
     text-align: center;
-    color: #f2ddcc;
+    color: var(--text-color);
 }
 
 .content {
@@ -78,7 +84,7 @@ h1 {
     margin: 0;
     font-weight: 700;
     text-transform: uppercase;
-    color: #f2ddcc; /* Text color */
+    color: var(--text-color);
 }
 
 .background {
@@ -92,9 +98,9 @@ h1 {
 
 .star {
     position: absolute;
-    background: rgba(242, 221, 204, 0.8); /* Star color */
+    background: var(--star-color);
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(242, 221, 204, 0.8);
+    box-shadow: 0 0 10px var(--star-color);
     opacity: 0;
 }
 
@@ -110,22 +116,22 @@ main {
 
 main h2 {
     margin-bottom: 20px;
-    color: #f2ddcc; /* Text color */
+    color: var(--text-color);
 }
 
 main canvas {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    background-color: #101524; /* Canvas background color */
+    display: block;
+    background: transparent;
+    max-width: 1200px;
+    width: 100%;
 }
 
-main .description {
+.main .description {
     max-width: 800px;
-    text-align: left; /* Align text to the left */
-    font-size: 18px; /* Increase font size */
-    line-height: 1.6; /* Increase line height */
-    color: #f2ddcc; /* Text color */
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-color);
 }
 
 .container {
@@ -137,14 +143,14 @@ main .description {
 }
 
 footer {
-    background-color: #101524; /* Background color */
-    height: 64px; /* Same height as header */
+    background-color: var(--background-color);
+    height: 64px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space between logo and link */
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Top border */
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
     text-align: center;
-    color: #f2ddcc; /* Text color */
+    color: var(--text-color);
 }
 
 footer .container {
@@ -167,7 +173,7 @@ footer nav ul li {
 
 footer nav ul li a {
     text-decoration: none;
-    color: #f2ddcc; /* Text color */
+    color: var(--text-color);
 }
 
 @media (max-width: 768px) {
@@ -192,4 +198,42 @@ footer nav ul li a {
     main canvas {
         width: 100%;
     }
+}
+
+.info-block {
+    display: flex;
+    max-width: 900px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 40px 0;
+    padding: 20px;
+    background: var(--background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.info-block h3 {
+    margin-top: 0;
+}
+
+.info-block .text-content,
+.info-block .image-content {
+    flex: 1;
+    margin: 10px;
+}
+
+.info-block .image-content {
+    padding-top: 55px;
+}
+
+.info-block .text-content {
+    text-align: left;
+}
+
+.info-block .image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
