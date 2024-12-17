@@ -18,6 +18,12 @@ body {
     color: var(--text-color);
 }
 
+ol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .header {
     background-color: var(--background-color);
     height: 64px;
